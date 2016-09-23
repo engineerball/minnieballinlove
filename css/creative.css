@@ -9,7 +9,12 @@ body {
   width: 100%;
 }
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-family: myriad-pro, sans-serif, "Helvetica Neue", Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: 1px;
+  line-height: 1.42857;
+  color: #222222;
 }
 hr {
   border-color: #42a5f5;
@@ -35,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: myriad-pro, sans-serif, "Helvetica Neue", Helvetica;
 }
 p {
   font-size: 16px;
@@ -425,6 +430,6 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
-h2.section-heading {
+h1.section-heading {
   font-family: "Alex Brush", myriad-pro, sans-serif, "Helvetica Neue", Helvetica;
 }
