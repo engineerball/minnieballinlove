@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+theme-primary	D:\VirtualBox VMs\balllab\minnieballinlove.com\less\variables.less	/^@theme-primary:    #42a5f5;$/;"	function	line:5
+gray-base	D:\VirtualBox VMs\balllab\minnieballinlove.com\less\variables.less	/^@gray-base:        #000;$/;"	function	line:7
+gray-darker	D:\VirtualBox VMs\balllab\minnieballinlove.com\less\variables.less	/^@gray-darker:      lighten(@gray-base, 13.5%); \/\/ #222$/;"	function	line:8
+gray-dark	D:\VirtualBox VMs\balllab\minnieballinlove.com\less\variables.less	/^@gray-dark:        lighten(@gray-base, 20%);   \/\/ #333$/;"	function	line:9
+gray	D:\VirtualBox VMs\balllab\minnieballinlove.com\less\variables.less	/^@gray:             lighten(@gray-base, 33.5%); \/\/ #555$/;"	function	line:10
+gray-light	D:\VirtualBox VMs\balllab\minnieballinlove.com\less\variables.less	/^@gray-light:       lighten(@gray-base, 46.7%); \/\/ #777$/;"	function	line:11
+gray-lighter	D:\VirtualBox VMs\balllab\minnieballinlove.com\less\variables.less	/^@gray-lighter:     lighten(@gray-base, 93.5%); \/\/ #eee$/;"	function	line:12
