@@ -23,7 +23,7 @@ if (isset($_POST['name']) && isset($_POST['mobile']) && isset($_POST['coming']) 
 
 
   $sql = "INSERT INTO guest (name, mobile, coming, room, create_date)
-  VALUES ("$name", "$mobile", $coming, $needroom, $date)";
+  VALUES ($name, $mobile, $coming, $needroom, $date)";
 
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
