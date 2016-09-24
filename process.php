@@ -28,7 +28,7 @@ if (isset($_POST['name']) && isset($_POST['mobile']) && isset($_POST['coming']) 
   . "'" . $mobile . "',"
   . "'" . $coming . "',"
   . "'" . $needroom. "',"
-  . "'" . $date .")";
+  . "'" . $date ."')";
 
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
