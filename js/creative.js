@@ -82,7 +82,7 @@
         cache: false,
         success: function(result){
           //alert(result);
-          swal("Thank you!", "See ya in December, 18 2016!", "success");
+          swal("Thank you!", "See ya on December, 18th 2016!", "success");
           $('#RSVPmodal').modal('hide');
         }
       });
