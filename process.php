@@ -4,7 +4,7 @@ $username = "minnieball";
 $password = "M1nnie<3bubbleball";
 $dbname = "minnieballinlove";
 
-if (isset($_POST['name']) && isset($_POST['mobile']) && isset($_POST['coming']) && isset($_POST['room']))
+if (isset($_POST['name1']) && isset($_POST['mobile1']) && isset($_POST['coming1']) && isset($_POST['room1']))
 {
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
