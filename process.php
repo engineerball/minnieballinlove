@@ -13,10 +13,10 @@ if (isset($_POST['name']) && isset($_POST['mobile']) && isset($_POST['coming']) 
       die("Connection failed: " . $conn->connect_error);
   }
 
-  $name = $_POST['name'];
-  $mobile = $_POST['mobile'];
-  $coming = $_POST['coming'];
-  $needroom = $_POST['room'];
+  $name = $_POST['name1'];
+  $mobile = $_POST['mobile1'];
+  $coming = $_POST['coming1'];
+  $needroom = $_POST['room1'];
 
   $date = date('Y-m-d H:i:s');
 

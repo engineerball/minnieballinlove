@@ -172,7 +172,7 @@ div	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^            <div
 button	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×<\/button>$/;"	function	line:307
 h	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^              <h1>RSVP<\/h1>$/;"	function	line:308
 div	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^            <div class="modal-body text-left">$/;"	function	line:310
-form	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^              <form class="form-horizontal" method="post" action="process.php">$/;"	function	line:311
+form	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^              <form class="form-horizontal" id="rsvp">$/;"	function	line:311
 fieldset	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                <fieldset>$/;"	function	line:312
 div	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                  <div class="form-group">$/;"	function	line:314
 label	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                    <label class="col-md-4 control-label" for="coming">Are you comming?<\/label>$/;"	function	line:315
@@ -204,7 +204,7 @@ option	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^             
 div	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                  <div class="form-group">$/;"	function	line:369
 label	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                    <label class="col-md-4 control-label" for="cancel"><\/label>$/;"	function	line:370
 div	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                    <div class="col-md-8">$/;"	function	line:371
-button	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                      <button id="submit" name="submit" class="btn btn-info">Submit<\/button>$/;"	function	line:372
+button	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^                      <button id="submit" name="submit" class="btn btn-info" onclick="myFunction()">Submit<\/button>$/;"	function	line:372
 div	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^            <div class="modal-footer">$/;"	function	line:379
 button	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close<\/button>$/;"	function	line:380
 section	D:\VirtualBox VMs\balllab\minnieballinlove.com\index.html	/^  <section id="contact">$/;"	function	line:389
