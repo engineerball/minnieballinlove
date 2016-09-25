@@ -90,7 +90,7 @@
             title: "Thank you!",
             text: "Please save the date: 18/12/16 in Udonthani!",
             type: "success",
-            timer: 3000
+            timer: 5000
           });
           $('#RSVPmodal').modal('hide');
         }

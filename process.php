@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Bangkok');
+
 $servername = "127.0.0.1";
 $username = "minnieball";
 $password = "M1nnie<3bubbleball";
