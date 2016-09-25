@@ -70,7 +70,11 @@
     var dataString = 'name1='+ name + '&mobile1='+ mobile + '&coming1='+ coming + '&room1='+ room;
     if(name==''||mobile==''||coming==''||room=='')
     {
-      alert("Please Fill All Fields");
+      //alert("Please Fill All Fields");
+      swal({
+        title: "You need to write something!",
+        type: "info"
+      });
     }
     else
     {
@@ -82,7 +86,12 @@
         cache: false,
         success: function(result){
           //alert(result);
-          swal("Thank you!", "See ya on December, 18th 2016!", "success");
+          swal({
+            title: "Thank you!",
+            text: "Please save the date: 18/12/16 in Udonthani!",
+            type: "success",
+            timer: 3000
+          });
           $('#RSVPmodal').modal('hide');
         }
       });
