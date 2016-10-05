@@ -61,14 +61,40 @@
     }
   });
 
+  $("#coming").click(function(){
+      $("#going:hidden").show('slow');
+  });
+  $("#not-coming").click(function(){
+      if($('#coming').prop('checked')===false){
+      $('#going').hide('slow');
+      }
+  });
+
+  $('#partner').hide('slow');
+$("#room").click(function(){
+  if($('#room').val()==='2'){
+  $('#partner:hidden').show('slow');
+}else{
+  $('#partner').hide('slow');
+}
+});
+
+
   $("#submit").click(function(){
-    var name = $("#name").val();
+    var firstname = $("#firstname").val();
+    var lastname = $("#lastname").val();
     var mobile = $("#mobile").val();
-    var coming = $("#coming").val();
+    var email = $("#email").val();
+    var coming = $("#join").val();
     var room = $("#room").val();
+    var friend = $("#friend").val();
+
+    if (friend==''||room=='0'){
+      var friend = 'null'
+    }
     // Returns successful data submission message when the entered information is stored in database.
-    var dataString = 'name1='+ name + '&mobile1='+ mobile + '&coming1='+ coming + '&room1='+ room;
-    if(name==''||mobile==''||coming==''||room=='')
+    var dataString = 'firstname1='+ firstname + '&lastname1=' + lastname + '&mobile1=' + mobile + '&email1=' + email + '&coming1=' + coming + '&room1=' + room + '&friend1=' + friend;
+    if(firstname==''||lastname==''||mobile==''||email==''||coming==''||room==''||friend=='')
     {
       //alert("Please Fill All Fields");
       swal({

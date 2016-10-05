@@ -6,7 +6,13 @@ $username = "minnieball";
 $password = "M1nnie<3bubbleball";
 $dbname = "minnieballinlove";
 
-if (isset($_POST['name1']) && isset($_POST['mobile1']) && isset($_POST['coming1']) && isset($_POST['room1']))
+if (isset($_POST['firstname1']) &&
+    isset($_POST['mobile1']) &&
+    isset($_POST['coming1']) &&
+    isset($_POST['lastname1']) &&
+    isset($_POST['room1']) &&
+    isset($_POST['friend1'])
+    )
 {
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,21 +21,28 @@ if (isset($_POST['name1']) && isset($_POST['mobile1']) && isset($_POST['coming1'
       die("Connection failed: " . $conn->connect_error);
   }
 
-  $name = $_POST['name1'];
+  $firstname = $_POST['firstname1'];
+  $lastname = $_POST['lastname1'];
   $mobile = $_POST['mobile1'];
-  $coming = $_POST['coming1'];
+  $email = $_POST['email1'];
+  #$coming = $_POST['coming1'];
+  $coming = '1';
   $needroom = $_POST['room1'];
+  $friend = $_POST['friend1'];
 
   $date = date('Y-m-d H:i:s');
 
 
 
-  $sql = "INSERT INTO guest (name, mobile, coming, room, create_date)
+  $sql = "INSERT INTO guest (firstname, lastname, mobile, email,coming, room, friend,create_date)
   VALUES ("
-  . "'" . $name . "',"
+  . "'" . $firstname . "',"
+  . "'" . $lastname . "',"
   . "'" . $mobile . "',"
+  . "'" . $email . "',"
   . "'" . $coming . "',"
   . "'" . $needroom. "',"
+  . "'" . $friend. "',"
   . "'" . $date ."')";
 
   if ($conn->query($sql) === TRUE) {

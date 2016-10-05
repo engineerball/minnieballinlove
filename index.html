@@ -146,14 +146,14 @@
         <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
           <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
           <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
+            <!-- <div class="portfolio-box-caption-content">
               <div class="project-category text-faded">
                 Category
               </div>
               <div class="project-name">
                 Project Name
               </div>
-            </div>
+            </div> -->
           </div>
         </a>
       </div>
@@ -161,14 +161,14 @@
         <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
           <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
           <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
+            <!-- <div class="portfolio-box-caption-content">
               <div class="project-category text-faded">
                 Category
               </div>
               <div class="project-name">
                 Project Name
               </div>
-            </div>
+            </div> -->
           </div>
         </a>
       </div>
@@ -176,14 +176,14 @@
         <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
           <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
           <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
+            <!-- <div class="portfolio-box-caption-content">
               <div class="project-category text-faded">
                 Category
               </div>
               <div class="project-name">
                 Project Name
               </div>
-            </div>
+            </div> -->
           </div>
         </a>
       </div>
@@ -191,14 +191,14 @@
         <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
           <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
           <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
+            <!-- <div class="portfolio-box-caption-content">
               <div class="project-category text-faded">
                 Category
               </div>
               <div class="project-name">
                 Project Name
               </div>
-            </div>
+            </div> -->
           </div>
         </a>
       </div>
@@ -206,14 +206,14 @@
         <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
           <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
           <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
+            <!-- <div class="portfolio-box-caption-content">
               <div class="project-category text-faded">
                 Category
               </div>
               <div class="project-name">
                 Project Name
               </div>
-            </div>
+            </div> -->
           </div>
         </a>
       </div>
@@ -221,14 +221,14 @@
         <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
           <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
           <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
+            <!-- <div class="portfolio-box-caption-content">
               <div class="project-category text-faded">
                 Category
               </div>
               <div class="project-name">
                 Project Name
               </div>
-            </div>
+            </div> -->
           </div>
         </a>
       </div>
@@ -262,7 +262,7 @@
         <div class="service-box">
           <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
           <h3>9:09 AM - Ceremony</h3>
-          <p class="text-muted">The ceremony will be held indoors at the Richmond Hill Country Club. Please arrive 15 minutes earlier.</p>
+          <p class="text-muted">The ceremony will be held indoors at the Jintana Home. Please arrive 15 minutes earlier.</p>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 text-center">
@@ -295,7 +295,6 @@
       <div class="call-to-action">
         <h1 class="section-heading">What are you wating for?</h1>
         <p>We would greatly appreciate it if you could respond before October 29th.</p>
-
         <a class="btn btn-primary" href="#RSVPmodal" data-toggle="modal"><h4>RSVP</h4></a>
       </div>
       <hr class="primary" />
@@ -306,68 +305,96 @@
           <div class="modal-content">
             <div class="modal-header modal-header-primary">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h1>RSVP</h1>
+              <h2 class="section-heading">RSVP</h2>
             </div>
             <div class="modal-body text-left">
               <form class="form-horizontal" id="rsvp">
                 <fieldset>
+
                   <!-- Multiple Radios -->
                   <div class="form-group">
-                    <label class="col-md-4 control-label" for="coming">Are you comming?</label>
-                    <div class="col-md-8">
+                    <label class="col-sm-12" for="coming">Are You Coming?</label>
+                    <div class="col-md-12">
+                      <div class="col-sm-6">
                       <div class="radio">
                         <label for="coming-0">
-                          <input type="radio" name="coming" id="coming" value="1" checked="checked">
-                          Yep, morning & night ♥
-                        </label>
+                          <input type="radio" name="coming" id="coming" value="1" checked>Will be there</label>
                       </div>
+                    </div>
+                    <div class="col-sm-6">
                       <div class="radio">
                         <label for="coming-1">
-                          <input type="radio" name="coming" id="coming" value="2">
-                          Morning only
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label for="coming-2">
-                          <input type="radio" name="coming" id="coming" value="3">
-                          Night party only
-                        </label>
+                          <input type="radio" name="coming" id="not-coming" value="0">Sorry I can't make it</label>
                       </div>
                     </div>
                   </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Name</label>
-                    <div class="col-md-4">
-                      <input id="name" name="name" type="text" placeholder="name" class="form-control input-md" required="">
-                    </div>
                   </div>
-
-                  <!-- Text input-->
+                 <div id="going">
+                  <!-- Multiple Radios -->
                   <div class="form-group">
-                    <label class="col-md-4 control-label" for="mobile">Mobile</label>
-                    <div class="col-md-4">
-                      <input id="mobile" name="mobile" type="text" placeholder="0812345678" class="form-control input-md" required="">
-                    </div>
-                  </div>
-
-                  <!-- Select Basic -->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="room">Do you want we reserve a room?</label>
-                    <div class="col-md-4">
-                      <select id="room" name="room" class="form-control">
-                        <option value="0">Nope</option>
-                        <option value="1">Yep - 1 room with 1 bed</option>
-                        <option value="2">Yep - 1 room with 2 beds</option>
+                    <label class="col-sm-12" for="when">When you join us on?</label>
+                    <div class="col-md-8">
+                      <select id="join" name="join" class="form-control">
+                        <option value="0">🌞 Morning Ceremony & 🌟 Night Party</option>
+                        <option value="1">🌞 Morning Ceremony only</option>
+                        <option value="2">🌟 Night Party only</option>
                       </select>
                     </div>
                   </div>
 
+                  <hr class="primary">
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-sm-12" for="detail">Your Detail</label>
+                  <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-sm-6">
+                      <input id="firstname" name="firstname" type="text" placeholder="FIRST NAME" class="form-control input-md" required="">
+                    </div>
+                    <div class="col-sm-6">
+                      <input id="lastname" name="lastname" type="text" placeholder="LAST NAME" class="form-control input-md" required="">
+                    </div>
+                  </div>
+                </div>
+
+                  <!-- Text input-->
+                  <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="col-sm-6">
+                      <input id="mobile" name="mobile" type="text" placeholder="083-123-4567" class="form-control input-md" required="">
+                    </div>
+                    <div class="col-sm-6">
+                      <input id="email" name="email" type="text" placeholder="john@mail.com" class="form-control input-md" required="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                  <!-- Select Basic -->
+                  <div class="form-group">
+                    <label class="col-sm-12" for="room">Do you want we reserve a room?</label>
+                    <div class="col-md-4">
+                      <select id="room" name="room" class="form-control">
+                        <option value="0">Never mind</option>
+                        <option value="1">Yep - Single bed</option>
+                        <option value="2">Yep - Double bed</option>
+                      </select>
+                    </div>
+                  </div>
+
+              <div id="partner">
+               <div class="form-group">
+                 <label class="col-sm-12" for="inputBody">Who're gonna be join room with you?</label>
+                 <div class="col-md-6">
+                      <input id="friend" name="friend" type="text" placeholder="your friend" class="form-control input-md" required="">
+                </div>
+               </div>
+             </div>
+
                   <!-- Button (Double) -->
                   <div class="form-group">
                     <label class="col-md-4 control-label" for="cancel"></label>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                       <button id="submit" name="submit" class="btn btn-info">Submit</button>
                     </div>
                   </div>
@@ -378,6 +405,7 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
             </div>
+          </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
