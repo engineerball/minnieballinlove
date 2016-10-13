@@ -172,7 +172,6 @@ header .header-content {
 }
 header .header-content .header-content-inner h1 {
   font-weight: 700;
-  text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 30px;
@@ -432,4 +431,30 @@ body {
 }
 h1.section-heading {
   font-family: "Alex Brush", myriad-pro, sans-serif, "Helvetica Neue", Helvetica;
+}
+.media {
+  /*box-shadow:0px 0px 4px -2px #000;*/
+  margin: 20px 0;
+  padding: 30px;
+}
+.map-container {
+  width: 100%;
+}
+.map-container iframe {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+  position: relative;
+  /* IE needs a position other than static */
+}
+.map-container iframe.clicked {
+  pointer-events: auto;
+}
+a.button {
+  color: rgba(255, 255, 255, 0.6);
+  box-shadow: rgba(255, 255, 255, 0.4) 0 0px 0px 2px inset;
+}
+a.button:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
 }
