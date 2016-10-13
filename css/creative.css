@@ -459,12 +459,12 @@ a.button:hover {
   box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
 }
 #clockdiv {
-  font-family: sans-serif;
   color: #fff;
   display: inline-block;
   font-weight: 100;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
+  width: auto;
 }
 #clockdiv > div {
   padding: 10px;
