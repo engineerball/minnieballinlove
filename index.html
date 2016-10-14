@@ -356,7 +356,7 @@
         <div class="service-box">
           <i class="fa fa-4x fa-star-o text-primary sr-icons"></i>
           <h3>10:00 PM - After Party</h3>
-          <p class="text-muted">ช่วงเวลาแห่งความสุกสุดเหวี่ยงทั้ง 2 เวทีกับ DJ Obba และวงดนตรีหมอลำ พร้อมเครื่องดื่มพิเศษจากร้านซาหมวยแอนด์ซัน อุดรธานี</p>
+          <p class="text-muted">ช่วงเวลาแห่งความสนุกสุดเหวี่ยงทั้ง 2 เวทีกับ DJ Obba และวงดนตรีหมอลำ พร้อมเครื่องดื่มพิเศษจากร้านซาหมวยแอนด์ซัน อุดรธานี</p>
         </div>
       </div>
     </div>
@@ -396,97 +396,154 @@
           <div class="modal-content">
             <div class="modal-header modal-header-primary">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h2 class="section-heading">RSVP</h2>
+              <h2 class="section-heading">Please sign your RSVP</h2>
             </div>
             <div class="modal-body text-left">
               <form class="form-horizontal" id="rsvp">
                 <fieldset>
 
-                  <!-- Multiple Radios -->
                   <div class="form-group">
-                    <label class="col-sm-12" for="coming">Are You Coming?</label>
+                    <label class="col-sm-12" for="detail">Your Detail</label>
                     <div class="col-md-12">
-                      <div class="col-sm-6">
-                        <div class="radio">
-                          <label for="coming-0">
-                            <input type="radio" name="coming" id="coming" value="1" checked>Will be there</label>
+                      <div class="form-group">
+                        <div class="col-sm-6">
+                          <div class="icon-addon addon-md">
+                            <input id="name" name="name" type="text" placeholder="Your Name" class="form-control input-md" required="">
+                            <label for="name" class="fa fa-user" rel="tooltip" title="name"></label>
                           </div>
                         </div>
                         <div class="col-sm-6">
+                          <div class="icon-addon addon-md">
+                            <input id="follower" name="follower" type="text" placeholder="Follower name (If you have)" class="form-control input-md">
+                            <label for="follower" class="fa fa-user-plus" rel="tooltip" title="follower"></label>
+                          </div>
+
+                            </div>
+                      </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <div class="col-sm-6">
+                          <div class="icon-addon addon-md">
+                          <input id="mobile" name="mobile" type="text" placeholder="083-123-4567" class="form-control input-md" required="">
+                          <label for="follower" class="fa fa-mobile" rel="tooltip" title="follower"></label>
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="icon-addon addon-md">
+                          <input id="email" name="email" type="text" placeholder="minnieball@gmail.com" class="form-control input-md" required="">
+                          <label for="follower" class="fa fa-envelope" rel="tooltip" title="follower"></label>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                        <hr class="primary">
+                  <!-- Multiple Radios -->
+                  <div class="form-group">
+                    <label class="col-sm-12" for="coming">Are You Coming?</label>
+                    <div class="col-md-12 col-sm-12">
+                      <div class="col-sm-6">
+                        <div class="radio">
+                          <label for="coming-0">
+                            <input type="radio" name="coming" id="coming" value="yes" checked>
+                            Will be there
+                          </label>
+                        </div>
+                      </div>
+                        <div class="col-sm-6">
                           <div class="radio">
                             <label for="coming-1">
-                              <input type="radio" name="coming" id="not-coming" value="0">Sorry I can't make it</label>
-                            </div>
+                              <input type="radio" name="coming" id="not-coming" value="no">
+                              Sorry I can't make it
+                            </label>
                           </div>
                         </div>
                       </div>
+                    </div>
+
+                    <!-- Wish message -->
+                    <div id="wish">
+                    <div class="form-group">
+                      <div class="col-md-12 col-sm-12">
+                        <div class="col-sm-12">
+                            <label for="coming-0">On your wedding day, I wish</label>
+                            <textarea class="form-control animated" placeholder="Write your wish..."></textarea>
+                            <button class="btn btn-info pull-right" style="margin-top:10px" type="button">Share</button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+                      <!-- going -->
                       <div id="going">
                         <!-- Multiple Radios -->
                         <div class="form-group">
                           <label class="col-sm-12" for="when">When you join us on?</label>
                           <div class="col-md-8">
                             <select id="join" name="join" class="form-control">
-                              <option value="0">🌞 Morning Ceremony & 🌟 Night Party</option>
-                              <option value="1">🌞 Morning Ceremony only</option>
-                              <option value="2">🌟 Night Party only</option>
+                              <option value="0">Both event (Ceremoney & Party)</option>
+                              <option value="1">Thai Wedding Ceremony (09.09 AM)</option>
+                              <option value="2">Wedding Party (06.18 PM)</option>
                             </select>
                           </div>
                         </div>
 
-                        <hr class="primary">
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-sm-12" for="detail">Your Detail</label>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="col-sm-6">
-                                <input id="firstname" name="firstname" type="text" placeholder="FIRST NAME" class="form-control input-md" required="">
-                              </div>
-                              <div class="col-sm-6">
-                                <input id="lastname" name="lastname" type="text" placeholder="LAST NAME" class="form-control input-md" required="">
-                              </div>
-                            </div>
-                          </div>
 
-                          <!-- Text input-->
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="col-sm-6">
-                                <input id="mobile" name="mobile" type="text" placeholder="083-123-4567" class="form-control input-md" required="">
-                              </div>
-                              <div class="col-sm-6">
-                                <input id="email" name="email" type="text" placeholder="john@mail.com" class="form-control input-md" required="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <!-- Text input-->
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                          <label class="col-sm-12" for="room">Do you want we reserve a room?</label>
-                          <div class="col-md-4">
+                          <div class="col-sm-12 col-md-12">
+                            <label for"room-preference">Do you want us to book a room?</label>
+                        </div>
+                          <div class="col-md-8 col-sm-8">
                             <select id="room" name="room" class="form-control">
                               <option value="0">Never mind</option>
-                              <option value="1">Yep - Single bed</option>
-                              <option value="2">Yep - Double bed</option>
+                              <option value="1">Yes - Single bed</option>
+                              <option value="2">Yes - Twin bed</option>
                             </select>
+
+                            <!-- In and Out time -->
+                            <div id="in-out-time" class="in-out-time">
+                              <div class="form-group">
+                                <label class="col-md-12 col-sm-12" for="in-out-time">In & Out</label>
+                                <div class="col-md-6 col-sm-12">
+                                  <div class="radio radio-primary">
+                                  <label for="night1" ><input type="radio" name="room" id="night1" value="17-18" checked> 17 Dec : 18 Dec</label>
+                                </div>
+                                <div class="radio radio-primary">
+                                  <label for="night2" ><input type="radio" name="room" id="night2" value="17-19"> 17 Dec : 19 Dec</label>
+                                </div>
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                <div class="radio inline-radio">
+       <label>
+           <input type="radio" id="radio-value" name="room" value="other" />
+       </label>Other:
+       <input id="result-value" class="form-control" name="value" type="text" placeholder="Write your time" value="" />
+
+   </div>
+                              </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+
+                          <div class="col-sm-12">
+                              <small class="text-muted">MinnieBall love to reserve your room at <a class="text-primary" href="http://www.leelawadeegrand.com/" target="_blank">Leelawadee Grand <i class="fa fa-building text-primary"></i></a>, You can pay at reception couuner hotel for 600 baht/night when you checkout</small>
                           </div>
                         </div>
 
-                        <div id="partner">
-                          <div class="form-group">
-                            <label class="col-sm-12" for="inputBody">Who're gonna be join room with you?</label>
-                            <div class="col-md-6">
-                              <input id="friend" name="friend" type="text" placeholder="your friend" class="form-control input-md" required="">
-                            </div>
-                          </div>
-                        </div>
+
 
                         <!-- Button (Double) -->
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="cancel"></label>
                           <div class="col-md-6">
-                            <button id="submit" name="submit" class="btn btn-info">Submit</button>
+                            <button id="submit" name="submit" class="btn btn-info">Sign Up</button>
                           </div>
                         </div>
 

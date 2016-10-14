@@ -107,21 +107,25 @@
   // End countdown
 
  // RSVP
+ $('#wish').hide();
+
   $("#coming").click(function(){
     $("#going:hidden").show('slow');
+    $("#wish").hide('slow');
   });
   $("#not-coming").click(function(){
     if($('#coming').prop('checked')===false){
       $('#going').hide('slow');
+      $('#wish').show('slow');
     }
   });
 
-  $('#partner').hide('slow');
+  $('#in-out-time').hide();
   $("#room").click(function(){
-    if($('#room').val()==='2'){
-      $('#partner:hidden').show('slow');
+    if($('#room').val()!='0'){
+      $('#in-out-time:hidden').show('slow');
     }else{
-      $('#partner').hide('slow');
+      $('#in-out-time').hide('slow');
     }
   });
 
