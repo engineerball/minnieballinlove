@@ -123,9 +123,9 @@
   $('#in-out-time').hide();
   $("#room").click(function(){
     if($('#room').val()!='0'){
-      $('#in-out-time:hidden').show('slow');
+      $('#in-out-time:hidden').show();
     }else{
-      $('#in-out-time').hide('slow');
+      $('#in-out-time').hide();
     }
   });
 
