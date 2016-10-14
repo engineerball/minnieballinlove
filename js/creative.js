@@ -121,11 +121,11 @@
   });
 
   $('#in-out-time').hide();
-  $("#room").click(function(){
+  $("#room").on('change', function(){
     if($('#room').val()!='0'){
-      $('#in-out-time:hidden').show();
+      $('#in-out-time:hidden').show('slow');
     }else{
-      $('#in-out-time').hide();
+      $('#in-out-time').hide('slow');
     }
   });
 
