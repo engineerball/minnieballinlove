@@ -6,12 +6,10 @@ $username = "minnieball";
 $password = "M1nnie<3bubbleball";
 $dbname = "minnieballinlove";
 
-if (isset($_POST['firstname1']) &&
+if (isset($_POST['name1']) &&
     isset($_POST['mobile1']) &&
     isset($_POST['coming1']) &&
-    isset($_POST['lastname1']) &&
-    isset($_POST['room1']) &&
-    isset($_POST['friend1'])
+    isset($_POST['email1'])
     )
 {
   // Create connection
@@ -21,28 +19,60 @@ if (isset($_POST['firstname1']) &&
       die("Connection failed: " . $conn->connect_error);
   }
 
-  $firstname = $_POST['firstname1'];
-  $lastname = $_POST['lastname1'];
+  $name = $_POST['name1'];
+  $follower = $_POST['follower1'];
   $mobile = $_POST['mobile1'];
-  $email = $_POST['email1'];
+  $email = html_entity_decode($_POST['email1']);
   #$coming = $_POST['coming1'];
-  $coming = '1';
-  $needroom = $_POST['room1'];
-  $friend = $_POST['friend1'];
+  $coming = $_POST['coming1'];
+  $room = $_POST['room1'];
+  $room_input = $_POST['room_input1'];
+  $join_event = $_POST['join_event1'];
+  $wish = $_POST['wish'];
+
+  switch ($room) {
+    case '0':
+      $room = "No";
+      break;
+    case '1':
+        $room = "Single";
+        break;
+    case '2':
+        $room = "Double";
+        break;
+    default:
+      $room = "No";
+      break;
+  }
+
+  switch ($join_event) {
+    case '0':
+      $join_event = "Both";
+      break;
+    case '1':
+      $join_event = "Morning";
+      break;
+    case '2':
+      $join_event = "Party";
+      break;
+    default:
+      $join_event = "Both";
+      break;
+  }
 
   $date = date('Y-m-d H:i:s');
 
-
-
-  $sql = "INSERT INTO guest (firstname, lastname, mobile, email,coming, room, friend,create_date)
+  $sql = "INSERT INTO guest (name, follower, mobile, email,coming, room, room_input,join_event,wish,create_date)
   VALUES ("
-  . "'" . $firstname . "',"
-  . "'" . $lastname . "',"
+  . "'" . $name . "',"
+  . "'" . $follower . "',"
   . "'" . $mobile . "',"
   . "'" . $email . "',"
   . "'" . $coming . "',"
-  . "'" . $needroom. "',"
-  . "'" . $friend. "',"
+  . "'" . $room. "',"
+  . "'" . $room_input. "',"
+  . "'" . $join_event. "',"
+  . "'" . $wish. "',"
   . "'" . $date ."')";
 
   if ($conn->query($sql) === TRUE) {

@@ -109,11 +109,14 @@
  // RSVP
  $('#wish').hide();
 
-  $("#coming").click(function(){
+  $('#coming').click(function(){
+    if($('#coming').prop('checked')===true){
     $("#going:hidden").show('slow');
     $("#wish").hide('slow');
+  }
   });
-  $("#not-coming").click(function(){
+
+  $('#not-coming').click(function(){
     if($('#coming').prop('checked')===false){
       $('#going').hide('slow');
       $('#wish').show('slow');
@@ -135,21 +138,47 @@
     .mouseleave(function(){
       $(this).find('iframe').removeClass('clicked')});
 
+
+
+
+
       $("#submit").click(function(){
-        var firstname = $("#firstname").val();
-        var lastname = $("#lastname").val();
+        var name = $("#name").val();
         var mobile = $("#mobile").val();
         var email = $("#email").val();
-        var coming = $("#join").val();
+        if ($('#coming').prop('checked')===true){
+          var coming = 'yes';
+        } else {
+          var coming = 'no';
+        }
+
+        var follower = $("#follower").val();
         var room = $("#room").val();
-        var friend = $("#friend").val();
+        var room_input = $("#room-date-input").val();
+
+        // var friend = $("#friend").val();
+        var join_event = $("#join").val();
+        var wish = $('textarea#wish').val();
 
         if (friend==''||room=='0'){
-          var friend = 'null'
+          var friend = 'null';
         }
+        if (follower==''){
+          var follower = 'null';
+        }
+        if (room_input==''){
+          var room_input = 'null';
+        }
+        if (wish==''){
+          var wish = 'null';
+        }
+        if (join_event==''){
+          var join_event = 'null';
+        }
+
         // Returns successful data submission message when the entered information is stored in database.
-        var dataString = 'firstname1='+ firstname + '&lastname1=' + lastname + '&mobile1=' + mobile + '&email1=' + email + '&coming1=' + coming + '&room1=' + room + '&friend1=' + friend;
-        if(firstname==''||lastname==''||mobile==''||email==''||coming==''||room==''||friend=='')
+        var dataString = 'name1=' + name + '&mobile1=' + mobile + '&email1=' + email + '&coming1=' + coming + '&follower1=' + follower + '&room1=' + room + '&room_input1=' + room_input + '&join_event1=' + join_event + '&wish1=' + wish;
+        if(name==''||mobile==''||email==''||coming=='')
         {
           //alert("Please Fill All Fields");
           swal({
@@ -159,6 +188,16 @@
         }
         else
         {
+          if (coming=='no'){
+            if (wish=='null'||wish==''){
+            swal({
+              title: "You need to write something!",
+              type: "info"
+            });
+            return false;
+            }
+          }
+
           // AJAX Code To Submit Form.
           $.ajax({
             type: "POST",
@@ -179,4 +218,5 @@
         }
         return false;
       });
+
     })(jQuery); // End of use strict

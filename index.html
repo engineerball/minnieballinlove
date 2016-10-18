@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Minnie 💕 Ball</title>
+  <title>Minnie💕 Ball</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -75,7 +75,7 @@
     <div class="header-content-inner fill">
       <!-- <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1> -->
       <!-- <h1 class="section-heading fill">Jintana & Teerapat</h1> -->
-  
+
       <!-- <hr>
       <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
       <a href="#RSVPmodal" data-toggle="modal" class="btn btn-xl page-scroll button">RSVP</a> -->
@@ -470,8 +470,9 @@
                       <div class="col-md-12 col-sm-12">
                         <div class="col-sm-12">
                           <label for="coming-0">On your wedding day, I wish</label>
-                          <textarea class="form-control animated" placeholder="Write your wish..."></textarea>
-                          <button class="btn btn-info pull-right" style="margin-top:10px" type="button">Share</button>
+                          <textarea class="form-control animated" name="wish" id="wish" placeholder="Write your wish..."></textarea>
+                          <!-- <button class="btn btn-info pull-right" style="margin-top:10px" type="button">Share</button> -->
+                          <!-- <button id="submit" name="submit" class="btn btn-info pull-right" style="margin-top:10px">Congrats</button> -->
                         </div>
                       </div>
                     </div>
@@ -512,18 +513,18 @@
                             <label class="col-md-12 col-sm-12" for="in-out-time">In & Out</label>
                             <div class="col-md-6 col-sm-12">
                               <div class="radio radio-primary">
-                                <label for="night1" ><input type="radio" name="room" id="night1" value="17-18" checked> 17 Dec : 18 Dec</label>
+                                <label for="night1" ><input type="radio" name="room-date" id="night1" value="17-18" checked> 17 Dec : 18 Dec</label>
                               </div>
                               <div class="radio radio-primary">
-                                <label for="night2" ><input type="radio" name="room" id="night2" value="17-19"> 17 Dec : 19 Dec</label>
+                                <label for="night2" ><input type="radio" name="room-date" id="night2" value="17-19"> 17 Dec : 19 Dec</label>
                               </div>
                             </div>
                             <div class="col-md-12 col-sm-12">
                               <div class="radio inline-radio">
                                 <label>
-                                  <input type="radio" id="radio-value" name="room" value="other" />
+                                  <input type="radio" id="radio-value" name="room-date" value="other" />
                                 </label>Other:
-                                <input id="result-value" class="form-control" name="value" type="text" placeholder="Write your time" value="" />
+                                <input id="room-date-input" class="form-control" name="room-date-input" type="text" placeholder="Write your time" value="" />
 
                               </div>
                             </div>
