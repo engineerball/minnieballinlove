@@ -28,7 +28,7 @@ if (isset($_POST['name1']) &&
   $room = $_POST['room1'];
   $room_input = $_POST['room_input1'];
   $join_event = $_POST['join_event1'];
-  $wish = $_POST['wish'];
+  $wish = $_POST['wish1'];
 
   switch ($room) {
     case '0':
