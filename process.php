@@ -128,7 +128,7 @@ if (isset($_POST['name1']) &&
 
         //Customise the email - self explanatory
         $mg->sendMessage($domain, array(
-        'from'=>'love@minnieballinlove.com',
+        'from'=>'minnieballinlove@minnieballinlove.com',
         'to'=> $email,
         'subject' => '[minnieballinlove] Thank you for response.',
         'html' => $html

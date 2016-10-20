@@ -154,6 +154,14 @@
 
         var follower = $("#follower").val();
         var room = $("#room").val();
+        var room_date = $('#room-date').val();
+
+        if ($('#room-date').prop('checked')===true){
+          var room_date = '17-18';
+        } else {
+          var room_date = '17-19';
+        }
+
         var room_input = $("#room-date-input").val();
 
         // var friend = $("#friend").val();
@@ -175,6 +183,12 @@
         if (join_event==''){
           var join_event = 'null';
         }
+
+        if (room_input == 'null')
+        {
+          var room_input = room_date;
+        }
+
 
         // Returns successful data submission message when the entered information is stored in database.
         var dataString = 'name1=' + name + '&mobile1=' + mobile + '&email1=' + email + '&coming1=' + coming + '&follower1=' + follower + '&room1=' + room + '&room_input1=' + room_input + '&join_event1=' + join_event + '&wish1=' + wish;
