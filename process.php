@@ -1,4 +1,11 @@
 <?php
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
+//Your credentials
+$mg = new Mailgun("key-6433c5fa21dd3f598aae6ea9d74dbdf7");
+$domain = "minnieballinlove.com";
+
+
 date_default_timezone_set('Asia/Bangkok');
 
 $servername = "127.0.0.1";
@@ -77,6 +84,16 @@ if (isset($_POST['name1']) &&
 
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
+      $html  = file_get_contents('mail/index.html'); // this will retrieve the html document
+
+      //Customise the email - self explanatory
+      $mg->sendMessage($domain, array(
+      'from'=>'love@minnieballinlove.com',
+      'to'=> $email,
+      'subject' => '[minnieballinlove] Thank you for response.',
+      'text' => $html
+          )
+      )
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
   }
