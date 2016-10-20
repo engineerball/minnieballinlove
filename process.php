@@ -84,21 +84,57 @@ if (isset($_POST['name1']) &&
 
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
-      $html  = file_get_contents('mail/index.html'); // this will retrieve the html document
+      if ($coming == 'yes') {
+        $html  = file_get_contents('mail/index.html'); // this will retrieve the html document
 
-      $html = str_replace("$NAME",$name,$html);
-      $html = str_replace("$ROOM",$room,$html);
-      $html = str_replace("$EVENT",$join_event,$html);
-      $html = str_replace("$RDATE",$room_input,$html);
 
-      //Customise the email - self explanatory
-      $mg->sendMessage($domain, array(
-      'from'=>'love@minnieballinlove.com',
-      'to'=> $email,
-      'subject' => '[minnieballinlove] Thank you for response.',
-      'html' => $html
-          )
-      );
+        switch ($room) {
+          case 'No':
+            $room = "ไม่ต้องการ";
+            break;
+          case 'Single':
+              $room = "เตียงเดี่ยว";
+              break;
+          case 'Double':
+              $room = "เตียงคู่";
+              break;
+          default:
+            $room = "No";
+            break;
+        }
+
+        switch ($join_event) {
+          case 'Both':
+            $join_event = "ทั้งเช้าและเย็น";
+            break;
+          case 'Morning':
+            $join_event = "พิธีตอนเช้า";
+            break;
+          case 'Party':
+            $join_event = "งานเลี้ยงตอนเย็น";
+            break;
+          default:
+            $join_event = "ทั้งเช้าและเย็น";
+            break;
+        }
+
+        if ($room_input == 'null'){
+          $room_input = 'ไม่ต้องการ';
+        }
+        $html = str_replace('$NAME',$name,$html);
+        $html = str_replace('$ROOM',$room,$html);
+        $html = str_replace('$EVENT',$join_event,$html);
+        $html = str_replace('$RDATE',$room_input,$html);
+
+        //Customise the email - self explanatory
+        $mg->sendMessage($domain, array(
+        'from'=>'love@minnieballinlove.com',
+        'to'=> $email,
+        'subject' => '[minnieballinlove] Thank you for response.',
+        'html' => $html
+            )
+        );
+    }
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
   }
