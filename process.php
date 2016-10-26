@@ -8,6 +8,28 @@ $domain = "mg.minnieballinlove.com";
 
 date_default_timezone_set('Asia/Bangkok');
 
+define('LINE_API',"https://notify-api.line.me/api/notify");
+define('LINE_TOKEN','QEmFienwpGiwUwOG9mGWTxOouyhGFfhJuqxmBH2pZX5');
+
+function notify_message($message){
+    $queryData = array('message' => $message);
+    $queryData = http_build_query($queryData,'','&');
+    $headerOptions = array(
+        'http'=>array(
+            'method'=>'POST',
+            'header'=> "Content-Type: application/x-www-form-urlencoded\r\n"
+            		  ."Authorization: Bearer ".LINE_TOKEN."\r\n"
+                      ."Content-Length: ".strlen($queryData)."\r\n",
+            'content' => $queryData
+        )
+    );
+    $context = stream_context_create($headerOptions);
+    $result = file_get_contents(LINE_API,FALSE,$context);
+    $res = json_decode($result);
+	return $res;
+}
+
+
 $servername = "127.0.0.1";
 $username = "minnieball";
 $password = "M1nnie<3bubbleball";
@@ -87,7 +109,6 @@ if (isset($_POST['name1']) &&
       if ($coming == 'yes') {
         $html  = file_get_contents('mail/index.html'); // this will retrieve the html document
 
-
         switch ($room) {
           case 'No':
             $room = "ไม่ต้องการ";
@@ -128,12 +149,18 @@ if (isset($_POST['name1']) &&
 
         //Customise the email - self explanatory
         $mg->sendMessage($domain, array(
-        'from'=>'minnieballinlove@minnieballinlove.com',
+        'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
         'to'=> $email,
         'subject' => '[minnieballinlove] Thank you for response.',
         'html' => $html
             )
         );
+        $message = $name . " บอกว่าจะไปร่วมงาน" . $join_event . " ส่วนห้องพักนั้น " . $room;
+        $res = notify_message($message);
+    }
+    else {
+      $message = $name . " บอกว่าไม่ได้ไปร่วมงาน";
+      $res = notify_message($message);
     }
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
