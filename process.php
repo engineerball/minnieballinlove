@@ -9,7 +9,7 @@ $domain = "mg.minnieballinlove.com";
 date_default_timezone_set('Asia/Bangkok');
 
 define('LINE_API',"https://notify-api.line.me/api/notify");
-define('LINE_TOKEN','QEmFienwpGiwUwOG9mGWTxOouyhGFfhJuqxmBH2pZX5');
+define('LINE_TOKEN','aLKeS5gh3wzKUxsOvokATtxy1Ajnl8aZzTiZ5SY1hfc');
 
 function notify_message($message){
     $queryData = array('message' => $message);
