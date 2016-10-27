@@ -11,23 +11,9 @@ date_default_timezone_set('Asia/Bangkok');
 define('LINE_API',"https://notify-api.line.me/api/notify");
 define('LINE_TOKEN','aLKeS5gh3wzKUxsOvokATtxy1Ajnl8aZzTiZ5SY1hfc');
 
-function notify_message($message){
-    $queryData = array('message' => $message);
-    $queryData = http_build_query($queryData,'','&');
-    $headerOptions = array(
-        'http'=>array(
-            'method'=>'POST',
-            'header'=> "Content-Type: application/x-www-form-urlencoded\r\n"
-            		  ."Authorization: Bearer ".LINE_TOKEN."\r\n"
-                      ."Content-Length: ".strlen($queryData)."\r\n",
-            'content' => $queryData
-        )
-    );
-    $context = stream_context_create($headerOptions);
-    $result = file_get_contents(LINE_API,FALSE,$context);
-    $res = json_decode($result);
-	return $res;
-}
+
+Resque::setBackend('localhost:6379');
+
 
 
 $servername = "127.0.0.1";
@@ -147,25 +133,37 @@ if (isset($_POST['name1']) &&
         $html = str_replace('$EVENT',$join_event,$html);
         $html = str_replace('$RDATE',$room_input,$html);
 
-        //Customise the email - self explanatory
-        $mg->sendMessage($domain, array(
-        'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
-        'to'=> $email,
-        'subject' => '[minnieballinlove] Thank you for response.',
-        'html' => $html
-            )
+        $mail_data = array(
+                  'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
+                  'to'=> $email,
+                  'subject' => '[minnieballinlove] Thank you for response.',
+                  'html' => $html
         );
-        $message = $name . " บอกว่าจะไปร่วมงาน" . $join_event . " ส่วนห้องพักนั้น " . $room;
-        $res = notify_message($message);
+        $line_message = $name . " บอกว่าจะไปร่วมงาน" . $join_event . " ส่วนห้องพักนั้น " . $room;
+
+
+        //Customise the email - self explanatory
+        // $mg->sendMessage($domain, $mail_data);
+        //
+        // $res = notify_message($line_message);
     }
     else {
-      $message = $name . " บอกว่าไม่ได้ไปร่วมงาน";
-      $res = notify_message($message);
+      $line_message = $name . " บอกว่าไม่ได้ไปร่วมงาน";
+
+      $html  = file_get_contents('mail/index.html'); // this will retrieve the html document
+      $mail_data = array(
+                'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
+                'to'=> $email,
+                'subject' => '[minnieballinlove] Thank you for response.',
+                'html' => $html
+      );
     }
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
   }
 
+  $args = array('mail' => $mail_data, 'line' => $line_message);
+  $jobID = Resque::enqueue('default', 'SendNotify', $args, true);
   $conn->close();
 }
 
