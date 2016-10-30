@@ -151,6 +151,8 @@ if (isset($_POST['name1']) &&
       $line_message = $name . " บอกว่าไม่ได้ไปร่วมงาน";
 
       $html  = file_get_contents('mail/notgoing.html'); // this will retrieve the html document
+      $html = str_replace('$NAME',$name,$html);
+      
       $mail_data = array(
                 'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
                 'to'=> $email,
