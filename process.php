@@ -136,7 +136,7 @@ if (isset($_POST['name1']) &&
         $mail_data = array(
                   'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
                   'to'=> $email,
-                  'subject' => '[minnieballinlove] Thank you for response.',
+                  'subject' => '[minnieballinlove] Thank you for your response.',
                   'html' => $html
         );
         $line_message = $name . " บอกว่าจะไปร่วมงาน" . $join_event . " ส่วนห้องพักนั้น " . $room;
@@ -156,7 +156,7 @@ if (isset($_POST['name1']) &&
       $mail_data = array(
                 'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
                 'to'=> $email,
-                'subject' => '[minnieballinlove] Thank you for response.',
+                'subject' => '[minnieballinlove] Thank you for your response.',
                 'html' => $html
       );
     }
