@@ -50,10 +50,10 @@ if (isset($_POST['name1']) &&
       $room = "No";
       break;
     case '1':
-        $room = "Single";
+        $room = "Double bed";
         break;
     case '2':
-        $room = "Double";
+        $room = "Twin bed";
         break;
     default:
       $room = "No";
@@ -99,10 +99,10 @@ if (isset($_POST['name1']) &&
           case 'No':
             $room = "ไม่ต้องการ";
             break;
-          case 'Single':
+          case 'Double bed':
               $room = "เตียงเดี่ยว";
               break;
-          case 'Double':
+          case 'Twin bed':
               $room = "เตียงคู่";
               break;
           default:
@@ -131,7 +131,7 @@ if (isset($_POST['name1']) &&
         $html = str_replace('$NAME',$name,$html);
         $html = str_replace('$ROOM',$room,$html);
         $html = str_replace('$EVENT',$join_event,$html);
-        $html = str_replace('$RDATE',$room_input,$html);
+        $html = str_replace('$RDATE',$room,$html);
 
         $mail_data = array(
                   'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',

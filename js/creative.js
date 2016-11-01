@@ -156,7 +156,7 @@
         var room = $("#room").val();
         var room_date = $('#room-date').val();
 
-        if ($('#room-date').prop('checked')===true){
+        if ($('#night1').prop('checked')===true){
           var room_date = '17-18';
         } else {
           var room_date = '17-19';
