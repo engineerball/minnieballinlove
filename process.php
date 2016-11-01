@@ -148,7 +148,7 @@ if (isset($_POST['name1']) &&
         // $res = notify_message($line_message);
     }
     else {
-      $line_message = $name . " บอกว่าไม่ได้ไปร่วมงาน";
+      $line_message = $name . " บอกว่าไม่ได้ไปร่วมงานและฝากคำยินดีว่า \"" . $wish ."\"";
 
       $html  = file_get_contents('mail/notgoing.html'); // this will retrieve the html document
       $html = str_replace('$NAME',$name,$html);
