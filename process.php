@@ -157,7 +157,7 @@ if (isset($_POST['name1']) &&
       $mail_data = array(
                 'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
                 'to'=> $email,
-                'subject' => 'Tanks for your wishes on our wedding day!',
+                'subject' => 'Thanks for your wishes on our wedding day!',
                 'html' => $html
       );
     }
