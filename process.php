@@ -112,16 +112,16 @@ if (isset($_POST['name1']) &&
 
         switch ($join_event) {
           case 'Both':
-            $join_event = "ทั้งเช้าและเย็น";
+            $join_event = "Both event (wedding ceremony & party)";
             break;
           case 'Morning':
-            $join_event = "พิธีตอนเช้า";
+            $join_event = "Thai wedding ceremony (09.09)";
             break;
           case 'Party':
-            $join_event = "งานเลี้ยงตอนเย็น";
+            $join_event = "Wedding party (18.18)";
             break;
           default:
-            $join_event = "ทั้งเช้าและเย็น";
+            $join_event = "Both event (wedding ceremony & party)";
             break;
         }
 
@@ -136,10 +136,10 @@ if (isset($_POST['name1']) &&
         $mail_data = array(
                   'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
                   'to'=> $email,
-                  'subject' => '[minnieballinlove] Thank you for your response.',
+                  'subject' => 'Thanks for taking part in our wedding day!',
                   'html' => $html
         );
-        $line_message = $name . " บอกว่าจะไปร่วมงาน" . $join_event . " ส่วนห้องพักนั้น " . $room;
+        $line_message = $name . " บอกว่าจะไปร่วมงาน" . $join_event . " ส่วนห้องพักนั้น " . $room . "จะพักวันที่ " . $room_input;
 
 
         //Customise the email - self explanatory
@@ -152,11 +152,12 @@ if (isset($_POST['name1']) &&
 
       $html  = file_get_contents('mail/notgoing.html'); // this will retrieve the html document
       $html = str_replace('$NAME',$name,$html);
-      
+      $html = str_replace('$WISH',$wish,$html);
+
       $mail_data = array(
                 'from'=>'MinnieBallinLove <wedding@minnieballinlove.com>',
                 'to'=> $email,
-                'subject' => '[minnieballinlove] Thank you for your response.',
+                'subject' => 'Tanks for your wishes on our wedding day!',
                 'html' => $html
       );
     }
